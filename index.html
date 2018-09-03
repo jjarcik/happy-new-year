@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Designuj 3D</title>
+        <link href="css/main.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+
+    </head>
+    <body>        
+        <div id="container">
+            <div id="background"></div>
+            <div id="clouds">
+                <img src="img/cloud1.png" alt="cloud" id="cloud1" class="cloud cloud-l" />                    
+                <img src="img/cloud23.png" alt="cloud" id="cloud2" class="cloud cloud-l" />                    
+                <img src="img/cloud23.png" alt="cloud" id="cloud3" class="cloud cloud-l" />                                        
+                <img src="img/cloud4.png" alt="cloud" id="cloud4" class="cloud cloud-r" />
+                <img src="img/cloud5.png" alt="cloud" id="cloud5" class="cloud cloud-r" />
+                <img src="img/cloud6.png" alt="cloud" id="cloud6" class="cloud cloud-r" />                                                                                        
+            </div>
+
+            <div id="earth_div"></div>
+            <div id="earth_div_flat"></div>                        
+        </div>
+
+        <div id='logs'></div>
+        <span id="switch" class="button i3d"></span>
+        <span id="play" class="button irun"></span>
+        <span id="push" class="button"></span>
+        <div id="qrcode"></div>
+        <div id="darker"></div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://www.webglearth.com/v2/api.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,310 @@
+html, body{
+    padding: 0; margin: 0;     
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+#container{
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    position: relative;
+}
+
+#background{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background: url('../img/galaxy-starry-night.jpg');
+    background-size:cover;
+}
+
+
+#earth_div, #earth_div_flat{
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    position: absolute !important;
+    margin: auto;       
+    z-index: 2;   
+}
+
+#earth_div{
+    width:100%;
+    height:100%;
+}
+
+#earth_div_flat{
+    display:none;         
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+.leaflet-control-container{
+    display:none;
+}
+
+.leaflet-map-pane{
+    /**/ margin-top: -140px; /**/
+}
+
+.we-pm-icon{
+    background: none !important;
+    width:25px  !important;
+    height: 25px  !important;    
+    margin-top:-12px !important;
+    position: relative;
+}
+
+.cesium-credit-textContainer{
+    display: none;
+}
+
+.firework{    
+    width:1px;
+    height: 1px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: auto;
+}
+
+.firework .first{
+    width:5px;
+    height: 5px;
+    background: orange;
+    display:block;
+    border-radius: 10px;
+}
+
+.firework .fi1, .firework .fi2, .firework .fi3{        
+    width: 0px;
+    height: 0px;
+    border-radius:100px ; 
+    display: block;
+    position: absolute;
+    opacity:0;
+}
+
+.firework .fi1{
+    -webkit-animation: firework1 2s linear;
+    background: red;
+}
+
+.firework .fi2{    
+    -webkit-animation: firework2 2s linear;    
+    -webkit-animation-delay: .5s;  
+    background: green;
+    left:-5px;
+}
+
+.firework .fi3{    
+    -webkit-animation: firework3 2s linear;    
+    -webkit-animation-delay: .5s;    
+    background: blue;
+    left:5px;
+    top:-5px;
+}
+
+.firework h1{
+    color:#fff;
+    font-size: 12px;
+    white-space: nowrap;
+    position: absolute;
+    -webkit-animation: fireworkh1 5s linear; 
+    opacity:0;
+}
+
+.firework.notrans .fi1,.firework.notrans .fi2,.firework.notrans .fi3 {
+    -webkit-animation: none;
+}
+
+#clouds{
+    left:50%;
+    width:50%;
+    position: absolute;    
+    top:0;    
+    height: 100%;
+    z-index: 0;
+}
+
+.cloud{        
+    position: absolute;                
+    z-index: 2;                
+
+}
+
+.cloud.cloud-l{
+    left:-800px; 
+    -webkit-animation: cloud-l 50s linear;
+}
+
+.cloud.cloud-r{
+    left:800px;   
+    -webkit-animation: cloud-r 50s linear;
+}        
+
+#cloud1{
+    top:60%;   
+    margin-left: -490px;
+    /* .animation(cloud-l, 50s, 1, linear, 0.1s forwards);  */
+}
+
+#cloud2{
+    top:10%;         
+    margin-left: -700px;
+    /* .animation(cloud-l, 90s, 1, linear, 0.1s forwards); */
+}
+
+#cloud3{
+    top:80%;       
+    margin-left: -960px;
+    /* .animation(cloud-l, 40s, 1, linear, 0.1s forwards); */
+}
+
+#cloud4{        
+    top:65%;         
+    margin-left: -105px;
+    /* .animation(cloud-r, 60s, 1, linear, 0.1s forwards); */
+}
+
+#cloud5{        
+    top:40%;   
+    /* .animation(cloud-r, 30s, 1, linear, 0.1s forwards); */
+}
+
+#cloud6{        
+    top:4%;    
+    margin-left: -400px;
+    /* .animation(cloud-r, 50s, 1, linear, 0.1s forwards); */
+}
+
+.button{
+    position: fixed;
+    top:10px;
+    right:10px;
+    font-size: 40px;
+    color:#fff;
+    border:5px solid #fff;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 2;    
+    width:49px;
+    text-align: center;
+}
+
+#switch:after{
+    content: "3D"
+}
+
+#switch.i3d:after{
+    content: "2D"
+}
+
+#play{
+    right:90px;
+}
+
+#play:after{
+    content: ">"
+}
+
+#play.irun:after{
+    content: "||"
+}
+
+#push{
+    right:180px;
+    height: 50px;
+    color:#ff3366;
+    background: url('../img/qr.png');
+    background-size: cover;
+    border: none;
+}
+
+#logs{
+    width:390px;
+    padding: 10px;
+    display: none;
+    height: 200px;
+    background: #000;
+    color:#ff0;
+    font-size: 12px;
+    position: fixed;
+    bottom:0;
+    left:0;
+    overflow-y: scroll;
+    z-index: 5;
+}
+
+#logs span{
+    display:block;
+}
+
+#qrcode{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 5;
+    display: none;
+    width:256px;
+    height: 256px;
+}
+
+#darker{
+    position: fixed;
+    top:0;    
+    left: 0;
+    z-index: 4;
+    opacity:0;
+    display: none;
+    width:100%;
+    height: 100%;
+    background: #fff;
+}
+
+@-webkit-keyframes firework1 {
+    0% {width: 0px; height: 0px;opacity:1}
+    70% {width: 20px;height: 20px;margin-left:-10px;margin-top:-10px;opacity:.7}
+    100% {width: 30px;height: 30px;margin-left:-15px;margin-top:-15px;opacity:0}
+}
+
+@-webkit-keyframes firework2 {
+    0% {width: 0px; height: 0px;opacity:1}
+    70% {width: 20px;height: 20px;margin-left:-10px;margin-top:-10px;opacity:.7}
+    100% {width: 30px;height: 30px;margin-left:-15px;margin-top:-15px;opacity:0}
+}
+
+@-webkit-keyframes firework3 {
+    0% {width: 0px; height: 0px;opacity:1}
+    70% {width: 30px;height: 30px;margin-left:-15px;margin-top:-15px;opacity:.7}
+    100% {width: 40px;height: 40px;margin-left:-20px;margin-top:-20px;opacity:0}
+}
+
+@-webkit-keyframes fireworkh1 {
+    0% {opacity:1}
+    100% {opacity:0}
+}
+
+
+@-webkit-keyframes cloud-l {
+    0% {left:-800px;}            
+    100% {left:-350px;}
+}
+
+@-webkit-keyframes cloud-r {
+    0% {left:800px;}            
+    100% {left:350px;}
+}
+
