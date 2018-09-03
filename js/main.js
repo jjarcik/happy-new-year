@@ -4,9 +4,11 @@ var imagedata = "./app/maps/map5/{z}/{x}/{y}.jpg";
 //imagedata = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 // imagedata = 'http://data.webglearth.com/natural-earth-color/{z}/{x}/{y}.jpg';
 
+// use for getting name of location randomly generated GPS
+var GOOGLE_API_KEY = "AIzaSyC4aecVok2LRfQTqjU5zyS0vlA89v8GrHE";
 var is3D = true;
+
 var map2D, evtSource;
-var API_KEY = "AIzaSyC4aecVok2LRfQTqjU5zyS0vlA89v8GrHE";
 var log = $("#logs");
 var markerinterval = 0;
 var rotateinterval = 0;
@@ -37,13 +39,11 @@ function initialize() {
 
 function init3D() {
     earth.setView([50.077079, 14.426828], 2.5);
-
     WE.tileLayer(imagedata).addTo(earth);
 }
 
 function init2D() {
     map2D = L.map('earth_div_flat', {center: [51.505, -0.09], dragging: false, zoom: 2, minZoom: 2, maxZoom: 4});
-
     L.tileLayer(imagedata).addTo(map2D);
 }
 
@@ -156,7 +156,7 @@ function reScaleMarkers($div) {
 
 function logCity(gps, callback) {
     if (googleTitle) {
-        $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + gps[0] + "," + gps[1] + "&key=" + API_KEY + "&result_type=country|locality",
+        $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + gps[0] + "," + gps[1] + "&key=" + GOOGLE_API_KEY + "&result_type=country|locality",
                 function (r) {
                     if (r.status === "OK") {
                         var title = r.results[0].formatted_address;
